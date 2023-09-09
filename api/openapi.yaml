@@ -19,6 +19,7 @@ paths:
     get:
       summary: "全ての管理者の取得"
       tags: ["admin"]
+      operationId: getAdmins
       deprecated: false
       responses:
         "200":
