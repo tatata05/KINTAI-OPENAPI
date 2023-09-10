@@ -31,23 +31,28 @@ paths:
 components:
   schemas:
     Admins:
-      type: array
-      items:
-        type: object
-        properties:
-          id:
-            type: integer
-            example: 1
-          name:
-            type: string
-            example: "example 管理者"
-          email:
-            type: string
-            example: "kintai@example.com"
-        required:
-          - "id"
-          - "name"
-          - "email"
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                example: 1
+              name:
+                type: string
+                example: "example 管理者"
+              email:
+                type: string
+                example: "kintai@example.com"
+            required:
+              - "id"
+              - "name"
+              - "email"
+      required:
+        - data
 # これからの参考にとりあえず残しておく
 # /users:
 #   get:
