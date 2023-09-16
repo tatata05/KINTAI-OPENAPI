@@ -65,13 +65,13 @@ components:
               type: integer
               example: 2
               nullable: true
-            limit_value:
+            limitValue:
               type: integer
               example: 10
             pages:
               type: integer
               example: 3
-            count:
+            totalCount:
               type: integer
               example: 30
       required:
