@@ -65,9 +65,6 @@ components:
               type: integer
               example: 2
               nullable: true
-            limitValue:
-              type: integer
-              example: 10
             pages:
               type: integer
               example: 3
