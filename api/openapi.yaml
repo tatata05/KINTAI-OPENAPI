@@ -15,7 +15,7 @@ tags:
     description: "管理者の操作"
 
 paths:
-  /admin/admins:
+  /api/v1/admin/admins:
     get:
       summary: "全ての管理者の取得"
       tags: ["admin"]
