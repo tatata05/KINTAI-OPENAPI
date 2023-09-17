@@ -45,6 +45,27 @@ paths:
           description: "Success"
         "422":
           description: "UnprocessableEntityError"
+  /api/v1/admin/admins/{id}:
+    get:
+      summary: "管理者の取得"
+      tags: ["admin"]
+      operationId: getAdmin
+      deprecated: false
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Admin"
+        "404":
+          description: "Not Found"
 components:
   schemas:
     Admins:
@@ -53,21 +74,7 @@ components:
         data:
           type: array
           items:
-            type: object
-            properties:
-              id:
-                type: integer
-                example: 1
-              name:
-                type: string
-                example: "example 管理者"
-              email:
-                type: string
-                example: "kintai@example.com"
-            required:
-              - "id"
-              - "name"
-              - "email"
+            $ref: "#/components/schemas/Admin"
         pagenation:
           type: object
           properties:
@@ -82,6 +89,22 @@ components:
               example: 30
       required:
         - data
+    Admin:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "example 管理者"
+        email:
+          type: string
+          example: "kintai@example.com"
+      required:
+        - "id"
+        - "name"
+        - "email"
     CreateAdmin:
       type: object
       properties:
