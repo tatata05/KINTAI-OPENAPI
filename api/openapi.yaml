@@ -60,7 +60,7 @@ components:
             pages:
               type: integer
               example: 3
-            total_count:
+            totalCount:
               type: integer
               example: 30
       required:
