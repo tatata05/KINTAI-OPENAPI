@@ -104,8 +104,30 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Admin"
+        "401":
+          description: "Unauthorized"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Unauthorized"
+        "403":
+          description: "Forbidden"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Forbidden"
         "404":
-          description: "Not Found"
+          description: "NotFound"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        "500":
+          description: "Forbidden"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalServerError"
 components:
   schemas:
     Admins:
@@ -190,6 +212,16 @@ components:
           type: array
           items:
             example: "権限がありません"
+    NotFound:
+      type: object
+      properties:
+        error_code:
+          type: string
+          example: "NotFound"
+        message:
+          type: array
+          items:
+            example: "対象データが存在しません。"
     InternalServerError:
       type: object
       properties:
