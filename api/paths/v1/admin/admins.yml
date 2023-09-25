@@ -51,5 +51,5 @@ post:
   responses:
     "201":
       description: "Success"
-    "422":
-      description: "UnprocessableEntityError"
+    "400":
+      $ref: "../../../components/responses/bad_request.yml"

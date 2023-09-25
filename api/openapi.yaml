@@ -37,13 +37,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Admin"
-        "400":
-          description: "BadRequest"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/BadRequest"
+                $ref: "./components/schemas/admin/admins_by_id.yml"
         "401":
           description: "Unauthorized"
           content:
