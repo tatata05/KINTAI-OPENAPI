@@ -37,9 +37,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./components/schemas/admin/admins_by_id.yml"
-        "404":
-          description: "Not Found"
+                $ref: "#/components/schemas/Admin"
         "400":
           description: "BadRequest"
           content:
@@ -58,6 +56,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Forbidden"
+        "404":
+          description: "NotFound"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
         "500":
           description: "Forbidden"
           content:
@@ -96,6 +100,26 @@ components:
           type: array
           items:
             example: "権限がありません"
+    NotFound:
+      type: object
+      properties:
+        error_code:
+          type: string
+          example: "NotFound"
+        message:
+          type: array
+          items:
+            example: "対象データが存在しません。"
+    InternalServerError:
+      type: object
+      properties:
+        error_code:
+          type: string
+          example: "InternalServerError"
+        message:
+          type: array
+          items:
+            example: "サーバーエラー"
 # これからの参考にとりあえず残しておく
 # /users:
 #   get:
