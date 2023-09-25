@@ -1,0 +1,13 @@
+description: "Forbidden"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        error_code:
+          type: string
+          example: "Forbidden"
+        message:
+          type: array
+          items:
+            example: "権限がありません"

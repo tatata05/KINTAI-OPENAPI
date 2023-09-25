@@ -1,0 +1,18 @@
+description: "InternalServerError"
+content:
+  application/json:
+    schema:
+      type: object
+      required:
+        - error_code
+        - messages
+      properties:
+        error_code:
+          description: エラーコード
+          type: string
+          example: "500"
+        messages:
+          type: array
+          items:
+            type: string
+            example: "サーバーエラー"
