@@ -1,5 +1,5 @@
 get:
-  summary: "管理者の取得"
+  summary: "管理者詳細の取得"
   tags: ["admin"]
   operationId: getAdmin
   deprecated: false

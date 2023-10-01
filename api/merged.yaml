@@ -273,7 +273,7 @@ paths:
                       example: サーバーエラー
   /api/v1/admin/admins/{id}:
     get:
-      summary: 管理者の取得
+      summary: 管理者詳細の取得
       tags:
         - admin
       operationId: getAdmin
@@ -654,6 +654,112 @@ paths:
                     type: array
                     items:
                       example: 権限がありません
+        '500':
+          description: InternalServerError
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errorCode:
+                    type: string
+                    example: InternalServerError
+                  messages:
+                    type: array
+                    items:
+                      type: string
+                      example: サーバーエラー
+  /api/v1/admin/employees/{id}:
+    get:
+      summary: 従業員詳細の取得
+      tags:
+        - admin
+      operationId: getEmployee
+      deprecated: false
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  name:
+                    type: string
+                    example: example 従業員
+                  email:
+                    type: string
+                    example: kintai_employee@example.com
+                  gender:
+                    type: string
+                    example: 男性
+                  age:
+                    type: integer
+                    example: 25
+                  address:
+                    type: string
+                    example: 東京都千代田区丸の内1-1-1
+                  phoneNumber:
+                    type: string
+                    example: 080-0000-0000
+                  emergencyPhoneNumber:
+                    type: string
+                    example: 090-0000-0000
+                required:
+                  - id
+                  - name
+                  - email
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errorCode:
+                    type: string
+                    example: Unauthorized
+                  message:
+                    type: array
+                    items:
+                      example: ログインしてください
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errorCode:
+                    type: string
+                    example: Forbidden
+                  message:
+                    type: array
+                    items:
+                      example: 権限がありません
+        '404':
+          description: NotFound
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errorCode:
+                    type: string
+                    example: NotFound
+                  message:
+                    type: array
+                    items:
+                      example: 対象データが存在しません。
         '500':
           description: InternalServerError
           content:
