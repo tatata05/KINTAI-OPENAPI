@@ -27,6 +27,8 @@ paths:
     $ref: "./paths/v1/admin/employees.yml"
   /api/v1/admin/shifts:
     $ref: "./paths/v1/admin/shifts.yml"
+  /api/v1/admin/shifts/{id}:
+    $ref: "./paths/v1/admin/shifts/shiftById.yml"
   /api/v1/admin/absences/{id}:
     $ref: "./paths/v1/admin/absences/absenceById.yml"
 # これからの参考にとりあえず残しておく
