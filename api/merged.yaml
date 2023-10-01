@@ -320,3 +320,125 @@ paths:
                     items:
                       type: string
                       example: サーバーエラー
+  /api/v1/admin/shifts:
+    get:
+      summary: シフトカレンダー関連の取得
+      tags:
+        - admin
+      operationId: getShifts
+      deprecated: false
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      shifts:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            start_time:
+                              type: string
+                              example: 2030/01/01 18:00
+                            end_time:
+                              type: string
+                              example: 2030/01/01 23:00
+                            status:
+                              type: string
+                              enum:
+                                - unapproved
+                                - approved
+                                - rejected
+                              example: unapproved
+                            employee:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 1
+                                name:
+                                  type: string
+                                  example: example 従業員
+                                email:
+                                  type: string
+                                  example: kintai_employee@example.com
+                              required:
+                                - id
+                                - name
+                                - email
+                          required:
+                            - id
+                            - start_time
+                            - end_time
+                            - status
+                            - employee
+                      unapplied_employees:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: example 従業員
+                            email:
+                              type: string
+                              example: kintai_employee@example.com
+                          required:
+                            - id
+                            - name
+                            - email
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                    example: Unauthorized
+                  message:
+                    type: array
+                    items:
+                      example: ログインしてください
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                    example: Forbidden
+                  message:
+                    type: array
+                    items:
+                      example: 権限がありません
+        '500':
+          description: InternalServerError
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                    example: InternalServerError
+                  messages:
+                    type: array
+                    items:
+                      type: string
+                      example: サーバーエラー
