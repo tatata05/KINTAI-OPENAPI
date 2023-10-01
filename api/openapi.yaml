@@ -85,6 +85,49 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/InternalServerError"
+  /api/v1/admin/admins/{id}:
+    get:
+      summary: "管理者の取得"
+      tags: ["admin"]
+      operationId: getAdmin
+      deprecated: false
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Admin"
+        "401":
+          description: "Unauthorized"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Unauthorized"
+        "403":
+          description: "Forbidden"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Forbidden"
+        "404":
+          description: "NotFound"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        "500":
+          description: "Forbidden"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalServerError"
 components:
   schemas:
     Admins:
@@ -93,21 +136,7 @@ components:
         data:
           type: array
           items:
-            type: object
-            properties:
-              id:
-                type: integer
-                example: 1
-              name:
-                type: string
-                example: "example 管理者"
-              email:
-                type: string
-                example: "kintai@example.com"
-            required:
-              - "id"
-              - "name"
-              - "email"
+            $ref: "#/components/schemas/Admin"
         pagenation:
           type: object
           properties:
@@ -122,6 +151,22 @@ components:
               example: 30
       required:
         - data
+    Admin:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "example 管理者"
+        email:
+          type: string
+          example: "kintai@example.com"
+      required:
+        - "id"
+        - "name"
+        - "email"
     CreateAdmin:
       type: object
       properties:
@@ -167,6 +212,16 @@ components:
           type: array
           items:
             example: "権限がありません"
+    NotFound:
+      type: object
+      properties:
+        error_code:
+          type: string
+          example: "NotFound"
+        message:
+          type: array
+          items:
+            example: "対象データが存在しません。"
     InternalServerError:
       type: object
       properties:
