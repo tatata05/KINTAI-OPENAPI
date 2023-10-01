@@ -319,6 +319,52 @@ paths:
                     items:
                       type: string
                       example: サーバーエラー
+    patch:
+      summary: 管理者編集
+      tags:
+        - admin
+      operationId: updateAdmin
+      deprecated: false
+      requestBody:
+        description: 管理者編集情報
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: admin管理者
+                email:
+                  type: string
+                  example: admin@example.com
+                password:
+                  type: string
+                  example: new password
+                password_confirmation:
+                  type: string
+                  example: new password
+                current_password:
+                  type: string
+                  example: current password
+      responses:
+        '201':
+          description: Success
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                    example: BadRequest
+                  message:
+                    type: array
+                    items:
+                      example: 〇〇を入力してください
   /api/v1/admin/shifts:
     get:
       summary: シフトカレンダー関連の取得

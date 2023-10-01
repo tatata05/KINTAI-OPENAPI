@@ -34,7 +34,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: "../../../components/request_body/admin.yml"
+          $ref: "../../../components/request_body/create_admin.yml"
   responses:
     "201":
       description: "Success"

@@ -24,3 +24,20 @@ get:
       $ref: "../../../../components/responses/not_found.yml"
     "500":
       $ref: "../../../../components/responses/internal_server_error.yml"
+patch:
+  summary: "管理者編集"
+  tags: ["admin"]
+  operationId: updateAdmin
+  deprecated: false
+  requestBody:
+    description: "管理者編集情報"
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../../../components/request_body/update_admin.yml"
+  responses:
+    "201":
+      description: "Success"
+    "400":
+      $ref: "../../../../components/responses/bad_request.yml"
