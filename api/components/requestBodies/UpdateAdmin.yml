@@ -9,9 +9,9 @@ properties:
   password:
     type: string
     example: "new password"
-  password_confirmation:
+  passwordConfirmation:
     type: string
     example: "new password"
-  current_password:
+  currentPassword:
     type: string
     example: "current password"

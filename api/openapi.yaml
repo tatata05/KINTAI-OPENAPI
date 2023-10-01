@@ -18,15 +18,15 @@ tags:
 
 paths:
   /api/v1/admin/current_admin:
-    $ref: "./paths/v1/admin/current_admin.yml"
+    $ref: "./paths/v1/admin/currentAdmin.yml"
   /api/v1/admin/admins:
     $ref: "./paths/v1/admin/admins.yml"
   /api/v1/admin/admins/{id}:
-    $ref: "./paths/v1/admin/admins/admin_by_id.yml"
+    $ref: "./paths/v1/admin/admins/adminById.yml"
   /api/v1/admin/shifts:
     $ref: "./paths/v1/admin/shifts.yml"
   /api/v1/admin/absences/{id}:
-    $ref: "./paths/v1/admin/absences/absence_by_id.yml"
+    $ref: "./paths/v1/admin/absences/absenceById.yml"
 # これからの参考にとりあえず残しておく
 # /users:
 #   get:

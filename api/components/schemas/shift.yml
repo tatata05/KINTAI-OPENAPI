@@ -3,10 +3,10 @@ properties:
   id:
     type: integer
     example: 1
-  start_time:
+  startTime:
     type: string
     example: "2030/01/01 18:00"
-  end_time:
+  endTime:
     type: string
     example: "2030/01/01 23:00"
   status:
@@ -18,10 +18,10 @@ properties:
     example: "unapproved"
   employee:
     type: object
-    $ref: "./employee.yml"
+    $ref: "./Employee.yml"
 required:
   - "id"
-  - "start_time"
-  - "end_time"
+  - "startTime"
+  - "endTime"
   - "status"
   - "employee"

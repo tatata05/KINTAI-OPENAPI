@@ -15,12 +15,12 @@ get:
       content:
         application/json:
           schema:
-            $ref: "../../../../components/schemas/absence.yml"
+            $ref: "../../../../components/schemas/Absence.yml"
     "401":
-      $ref: "../../../../components/responses/unauthorized.yml"
+      $ref: "../../../../components/responses/Unauthorized.yml"
     "403":
-      $ref: "../../../../components/responses/forbidden.yml"
+      $ref: "../../../../components/responses/Forbidden.yml"
     "404":
-      $ref: "../../../../components/responses/not_found.yml"
+      $ref: "../../../../components/responses/NotFound.yml"
     "500":
-      $ref: "../../../../components/responses/internal_server_error.yml"
+      $ref: "../../../../components/responses/InternalServerError.yml"

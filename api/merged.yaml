@@ -47,7 +47,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: Unauthorized
                   message:
@@ -61,7 +61,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: Forbidden
                   message:
@@ -75,7 +75,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: NotFound
                   message:
@@ -89,7 +89,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: InternalServerError
                   messages:
@@ -149,7 +149,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: Unauthorized
                   message:
@@ -163,7 +163,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: Forbidden
                   message:
@@ -177,7 +177,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: InternalServerError
                   messages:
@@ -208,7 +208,7 @@ paths:
                 password:
                   type: string
                   example: password
-                password_confirmation:
+                passwordConfirmation:
                   type: string
                   example: password
       responses:
@@ -221,7 +221,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: BadRequest
                   message:
@@ -269,7 +269,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: Unauthorized
                   message:
@@ -283,7 +283,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: Forbidden
                   message:
@@ -297,7 +297,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: NotFound
                   message:
@@ -311,7 +311,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: InternalServerError
                   messages:
@@ -342,10 +342,10 @@ paths:
                 password:
                   type: string
                   example: new password
-                password_confirmation:
+                passwordConfirmation:
                   type: string
                   example: new password
-                current_password:
+                currentPassword:
                   type: string
                   example: current password
       responses:
@@ -358,7 +358,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: BadRequest
                   message:
@@ -391,10 +391,10 @@ paths:
                             id:
                               type: integer
                               example: 1
-                            start_time:
+                            startTime:
                               type: string
                               example: 2030/01/01 18:00
-                            end_time:
+                            endTime:
                               type: string
                               example: 2030/01/01 23:00
                             status:
@@ -422,8 +422,8 @@ paths:
                                 - email
                           required:
                             - id
-                            - start_time
-                            - end_time
+                            - startTime
+                            - endTime
                             - status
                             - employee
                       unapplied_employees:
@@ -451,7 +451,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: Unauthorized
                   message:
@@ -465,7 +465,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: Forbidden
                   message:
@@ -479,7 +479,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: InternalServerError
                   messages:
@@ -524,10 +524,10 @@ paths:
                       id:
                         type: integer
                         example: 1
-                      start_time:
+                      startTime:
                         type: string
                         example: 2030/01/01 18:00
-                      end_time:
+                      endTime:
                         type: string
                         example: 2030/01/01 23:00
                       status:
@@ -555,8 +555,8 @@ paths:
                           - email
                     required:
                       - id
-                      - start_time
-                      - end_time
+                      - startTime
+                      - endTime
                       - status
                       - employee
                 required:
@@ -570,7 +570,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: Unauthorized
                   message:
@@ -584,7 +584,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: Forbidden
                   message:
@@ -598,7 +598,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: NotFound
                   message:
@@ -612,7 +612,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  error_code:
+                  errorCode:
                     type: string
                     example: InternalServerError
                   messages:
