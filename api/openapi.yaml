@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   title: "KINTAI"
   description: >-
-    "勤怠管理アプリ「KINTAI」"
+    勤怠管理アプリ「KINTAI」
 
 servers:
   - url: "http://localhost:8003"
@@ -20,100 +20,7 @@ paths:
   /api/v1/admin/admins:
     $ref: "./paths/v1/admin/admins.yml"
   /api/v1/admin/admins/{id}:
-    get:
-      summary: "管理者の取得"
-      tags: ["admin"]
-      operationId: getAdmin
-      deprecated: false
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        "200":
-          description: "Success"
-          content:
-            application/json:
-              schema:
-                $ref: "./components/schemas/admin/admins_by_id.yml"
-        "401":
-          description: "Unauthorized"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Unauthorized"
-        "403":
-          description: "Forbidden"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Forbidden"
-        "404":
-          description: "NotFound"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/NotFound"
-        "500":
-          description: "Forbidden"
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Forbidden"
-components:
-  schemas:
-    BadRequest:
-      type: object
-      properties:
-        error_code:
-          type: string
-          example: "BadRequest"
-        message:
-          type: array
-          items:
-            example: "エラーメッセージ"
-    Unauthorized:
-      type: object
-      properties:
-        error_code:
-          type: string
-          example: "Unauthorized"
-        message:
-          type: array
-          items:
-            example: "ログインしてください"
-    Forbidden:
-      type: object
-      properties:
-        error_code:
-          type: string
-          example: "Forbidden"
-        message:
-          type: array
-          items:
-            example: "権限がありません"
-    NotFound:
-      type: object
-      properties:
-        error_code:
-          type: string
-          example: "NotFound"
-        message:
-          type: array
-          items:
-            example: "対象データが存在しません。"
-    InternalServerError:
-      type: object
-      properties:
-        error_code:
-          type: string
-          example: "InternalServerError"
-        message:
-          type: array
-          items:
-            example: "サーバーエラー"
+    $ref: "./paths/v1/admin/admins/admin_by_id.yml"
 # これからの参考にとりあえず残しておく
 # /users:
 #   get:

@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   version: 1.0.0
   title: KINTAI
-  description: '"勤怠管理アプリ「KINTAI」"'
+  description: 勤怠管理アプリ「KINTAI」
 servers:
   - url: http://localhost:8003
     description: ローカル環境
@@ -114,18 +114,19 @@ paths:
             schema:
               type: object
               properties:
+                id:
+                  type: integer
+                  example: 1
                 name:
                   type: string
-                  example: admin管理者
+                  example: example 管理者
                 email:
                   type: string
-                  example: admin@example.com
-                password:
-                  type: string
-                  example: password
-                password_confirmation:
-                  type: string
-                  example: password
+                  example: kintai@example.com
+              required:
+                - id
+                - name
+                - email
       responses:
         '201':
           description: Success
@@ -182,74 +183,55 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Unauthorized'
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                    example: Unauthorized
+                  message:
+                    type: array
+                    items:
+                      example: ログインしてください
         '403':
           description: Forbidden
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Forbidden'
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                    example: Forbidden
+                  message:
+                    type: array
+                    items:
+                      example: 権限がありません
         '404':
           description: NotFound
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFound'
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                    example: NotFound
+                  message:
+                    type: array
+                    items:
+                      example: 対象データが存在しません。
         '500':
-          description: Forbidden
+          description: InternalServerError
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Forbidden'
-components:
-  schemas:
-    BadRequest:
-      type: object
-      properties:
-        error_code:
-          type: string
-          example: BadRequest
-        message:
-          type: array
-          items:
-            example: エラーメッセージ
-    Unauthorized:
-      type: object
-      properties:
-        error_code:
-          type: string
-          example: Unauthorized
-        message:
-          type: array
-          items:
-            example: ログインしてください
-    Forbidden:
-      type: object
-      properties:
-        error_code:
-          type: string
-          example: Forbidden
-        message:
-          type: array
-          items:
-            example: 権限がありません
-    NotFound:
-      type: object
-      properties:
-        error_code:
-          type: string
-          example: NotFound
-        message:
-          type: array
-          items:
-            example: 対象データが存在しません。
-    InternalServerError:
-      type: object
-      properties:
-        error_code:
-          type: string
-          example: InternalServerError
-        message:
-          type: array
-          items:
-            example: サーバーエラー
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                    example: InternalServerError
+                  messages:
+                    type: array
+                    items:
+                      type: string
+                      example: サーバーエラー

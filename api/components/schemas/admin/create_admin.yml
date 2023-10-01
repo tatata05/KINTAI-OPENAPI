@@ -1,0 +1,14 @@
+type: object
+properties:
+  name:
+    type: string
+    example: "admin管理者"
+  email:
+    type: string
+    example: "admin@example.com"
+  password:
+    type: string
+    example: "password"
+  password_confirmation:
+    type: string
+    example: "password"
