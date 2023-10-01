@@ -114,19 +114,18 @@ paths:
             schema:
               type: object
               properties:
-                id:
-                  type: integer
-                  example: 1
                 name:
                   type: string
-                  example: example 管理者
+                  example: admin管理者
                 email:
                   type: string
-                  example: kintai@example.com
-              required:
-                - id
-                - name
-                - email
+                  example: admin@example.com
+                password:
+                  type: string
+                  example: password
+                password_confirmation:
+                  type: string
+                  example: password
       responses:
         '201':
           description: Success
