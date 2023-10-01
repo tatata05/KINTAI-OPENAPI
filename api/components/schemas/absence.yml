@@ -12,7 +12,7 @@ properties:
     example: "unapproved"
   shift:
     type: object
-    $ref: "./get_shift.yml"
+    $ref: "./shift.yml"
 required:
   - "id"
   - "status"

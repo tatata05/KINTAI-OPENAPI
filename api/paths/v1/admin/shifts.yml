@@ -17,11 +17,11 @@ get:
                   shifts:
                     type: array
                     items:
-                      $ref: "../../../components/schemas/admin/get_shift.yml"
+                      $ref: "../../../components/schemas/shift.yml"
                   unapplied_employees:
                     type: array
                     items:
-                      $ref: "../../../components/schemas/admin/get_employee.yml"
+                      $ref: "../../../components/schemas/employee.yml"
     "401":
       $ref: "../../../components/responses/unauthorized.yml"
     "403":

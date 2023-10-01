@@ -14,7 +14,7 @@ get:
               data:
                 type: array
                 items:
-                  $ref: "../../../components/schemas/admin/get_admin.yml"
+                  $ref: "../../../components/schemas/admin.yml"
               pagenation:
                 $ref: "../../../components/schemas/pagination.yml"
     "401":
@@ -34,7 +34,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: "../../../components/schemas/admin/get_admin.yml"
+          $ref: "../../../components/request_body/admin.yml"
   responses:
     "201":
       description: "Success"

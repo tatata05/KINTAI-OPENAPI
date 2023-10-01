@@ -15,7 +15,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: "../../../../components/schemas/admin/get_absence.yml"
+            $ref: "../../../../components/schemas/absence.yml"
     "401":
       $ref: "../../../../components/responses/unauthorized.yml"
     "403":
