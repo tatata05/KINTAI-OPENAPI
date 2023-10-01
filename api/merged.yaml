@@ -12,6 +12,91 @@ tags:
   - name: employee
     description: 従業員の操作
 paths:
+  /api/v1/admin/current_admin:
+    get:
+      summary: ログインしている管理者の取得
+      tags:
+        - admin
+      operationId: getCurrentAdmin
+      deprecated: false
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  name:
+                    type: string
+                    example: example 管理者
+                  email:
+                    type: string
+                    example: kintai@example.com
+                required:
+                  - id
+                  - name
+                  - email
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                    example: Unauthorized
+                  message:
+                    type: array
+                    items:
+                      example: ログインしてください
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                    example: Forbidden
+                  message:
+                    type: array
+                    items:
+                      example: 権限がありません
+        '404':
+          description: NotFound
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                    example: NotFound
+                  message:
+                    type: array
+                    items:
+                      example: 対象データが存在しません。
+        '500':
+          description: InternalServerError
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                    example: InternalServerError
+                  messages:
+                    type: array
+                    items:
+                      type: string
+                      example: サーバーエラー
   /api/v1/admin/admins:
     get:
       summary: 全ての管理者の取得

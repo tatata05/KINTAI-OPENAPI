@@ -1,0 +1,20 @@
+get:
+  summary: "ログインしている管理者の取得"
+  tags: ["admin"]
+  operationId: getCurrentAdmin
+  deprecated: false
+  responses:
+    "200":
+      description: "Success"
+      content:
+        application/json:
+          schema:
+            $ref: "../../../components/schemas/admin/get_admin.yml"
+    "401":
+      $ref: "../../../components/responses/unauthorized.yml"
+    "403":
+      $ref: "../../../components/responses/forbidden.yml"
+    "404":
+      $ref: "../../../components/responses/not_found.yml"
+    "500":
+      $ref: "../../../components/responses/internal_server_error.yml"

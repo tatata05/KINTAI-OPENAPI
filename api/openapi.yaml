@@ -17,6 +17,8 @@ tags:
     description: "従業員の操作"
 
 paths:
+  /api/v1/admin/current_admin:
+    $ref: "./paths/v1/admin/current_admin.yml"
   /api/v1/admin/admins:
     $ref: "./paths/v1/admin/admins.yml"
   /api/v1/admin/admins/{id}:
