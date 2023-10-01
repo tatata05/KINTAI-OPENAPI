@@ -23,6 +23,8 @@ paths:
     $ref: "./paths/v1/admin/admins.yml"
   /api/v1/admin/admins/{id}:
     $ref: "./paths/v1/admin/admins/adminById.yml"
+  /api/v1/admin/employees:
+    $ref: "./paths/v1/admin/employees.yml"
   /api/v1/admin/shifts:
     $ref: "./paths/v1/admin/shifts.yml"
   /api/v1/admin/absences/{id}:

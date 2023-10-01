@@ -365,6 +365,109 @@ paths:
                     type: array
                     items:
                       example: 〇〇を入力してください
+  /api/v1/admin/employees:
+    get:
+      summary: 全ての従業員の取得
+      tags:
+        - admin
+      operationId: getEmployees
+      deprecated: false
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: example 従業員
+                        email:
+                          type: string
+                          example: kintai_employee@example.com
+                        gender:
+                          type: string
+                          example: 男性
+                        age:
+                          type: integer
+                          example: 25
+                        address:
+                          type: string
+                          example: 東京都千代田区丸の内1-1-1
+                        phoneNumber:
+                          type: string
+                          example: 080-0000-0000
+                        emergencyPhoneNumber:
+                          type: string
+                          example: 090-0000-0000
+                      required:
+                        - id
+                        - name
+                        - email
+                  pagenation:
+                    type: object
+                    properties:
+                      current:
+                        type: integer
+                        example: 1
+                      pages:
+                        type: integer
+                        example: 3
+                      totalCount:
+                        type: integer
+                        example: 30
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errorCode:
+                    type: string
+                    example: Unauthorized
+                  message:
+                    type: array
+                    items:
+                      example: ログインしてください
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errorCode:
+                    type: string
+                    example: Forbidden
+                  message:
+                    type: array
+                    items:
+                      example: 権限がありません
+        '500':
+          description: InternalServerError
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errorCode:
+                    type: string
+                    example: InternalServerError
+                  messages:
+                    type: array
+                    items:
+                      type: string
+                      example: サーバーエラー
   /api/v1/admin/shifts:
     get:
       summary: シフトカレンダー関連の取得
@@ -416,6 +519,21 @@ paths:
                                 email:
                                   type: string
                                   example: kintai_employee@example.com
+                                gender:
+                                  type: string
+                                  example: 男性
+                                age:
+                                  type: integer
+                                  example: 25
+                                address:
+                                  type: string
+                                  example: 東京都千代田区丸の内1-1-1
+                                phoneNumber:
+                                  type: string
+                                  example: 080-0000-0000
+                                emergencyPhoneNumber:
+                                  type: string
+                                  example: 090-0000-0000
                               required:
                                 - id
                                 - name
@@ -440,6 +558,21 @@ paths:
                             email:
                               type: string
                               example: kintai_employee@example.com
+                            gender:
+                              type: string
+                              example: 男性
+                            age:
+                              type: integer
+                              example: 25
+                            address:
+                              type: string
+                              example: 東京都千代田区丸の内1-1-1
+                            phoneNumber:
+                              type: string
+                              example: 080-0000-0000
+                            emergencyPhoneNumber:
+                              type: string
+                              example: 090-0000-0000
                           required:
                             - id
                             - name
@@ -549,6 +682,21 @@ paths:
                           email:
                             type: string
                             example: kintai_employee@example.com
+                          gender:
+                            type: string
+                            example: 男性
+                          age:
+                            type: integer
+                            example: 25
+                          address:
+                            type: string
+                            example: 東京都千代田区丸の内1-1-1
+                          phoneNumber:
+                            type: string
+                            example: 080-0000-0000
+                          emergencyPhoneNumber:
+                            type: string
+                            example: 090-0000-0000
                         required:
                           - id
                           - name
