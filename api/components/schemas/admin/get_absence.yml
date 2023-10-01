@@ -3,12 +3,6 @@ properties:
   id:
     type: integer
     example: 1
-  start_time:
-    type: string
-    example: "2030/01/01 18:00"
-  end_time:
-    type: string
-    example: "2030/01/01 23:00"
   status:
     type: string
     enum:
@@ -16,12 +10,10 @@ properties:
       - approved
       - rejected
     example: "unapproved"
-  employee:
+  shift:
     type: object
-    $ref: "./get_employee.yml"
+    $ref: "./get_shift.yml"
 required:
   - "id"
-  - "start_time"
-  - "end_time"
   - "status"
-  - "employee"
+  - "shift"
