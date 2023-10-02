@@ -18,23 +18,23 @@ tags:
 
 paths:
   /api/v1/admin/current_admin:
-    $ref: "./paths/v1/admin/currentAdmin.yml"
+    $ref: "./paths/admin/currentAdmin.yml"
   /api/v1/admin/admins:
-    $ref: "./paths/v1/admin/admins.yml"
+    $ref: "./paths/admin/admins.yml"
   /api/v1/admin/admins/{id}:
-    $ref: "./paths/v1/admin/admins/adminById.yml"
+    $ref: "./paths/admin/adminById.yml"
   /api/v1/admin/employees:
-    $ref: "./paths/v1/admin/employees.yml"
+    $ref: "./paths/admin/employees.yml"
   /api/v1/admin/employees/{id}:
-    $ref: "./paths/v1/admin/employees/employeeById.yml"
+    $ref: "./paths/admin/employeeById.yml"
   /api/v1/admin/shifts:
-    $ref: "./paths/v1/admin/shifts.yml"
+    $ref: "./paths/admin/shifts.yml"
   /api/v1/admin/shifts/{id}:
-    $ref: "./paths/v1/admin/shifts/shiftById.yml"
+    $ref: "./paths/admin/shiftById.yml"
   /api/v1/admin/absences/{id}:
-    $ref: "./paths/v1/admin/absences/absenceById.yml"
+    $ref: "./paths/admin/absenceById.yml"
   /api/v1/admin/notifications:
-    $ref: "./paths/v1/admin/notifications.yml"
+    $ref: "./paths/admin/notifications.yml"
 # これからの参考にとりあえず残しておく
 # /users:
 #   get:

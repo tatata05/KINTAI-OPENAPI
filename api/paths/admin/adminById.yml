@@ -1,0 +1,55 @@
+get:
+  summary: "管理者詳細の取得"
+  tags: ["admin"]
+  operationId: getAdmin
+  deprecated: false
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      description: "Success"
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                $ref: "../../components/schemas/Admin.yml"
+    "401":
+      $ref: "../../components/responses/Unauthorized.yml"
+    "403":
+      $ref: "../../components/responses/Forbidden.yml"
+    "404":
+      $ref: "../../components/responses/NotFound.yml"
+    "500":
+      $ref: "../../components/responses/InternalServerError.yml"
+patch:
+  summary: "管理者編集"
+  tags: ["admin"]
+  operationId: updateAdmin
+  deprecated: false
+  requestBody:
+    description: "管理者編集情報"
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../components/requestBodies/UpdateAdmin.yml"
+  responses:
+    "201":
+      description: "Success"
+    "400":
+      $ref: "../../components/responses/BadRequest.yml"
+    "401":
+      $ref: "../../components/responses/Unauthorized.yml"
+    "403":
+      $ref: "../../components/responses/Forbidden.yml"
+    "404":
+      $ref: "../../components/responses/NotFound.yml"
+    "500":
+      $ref: "../../components/responses/InternalServerError.yml"
