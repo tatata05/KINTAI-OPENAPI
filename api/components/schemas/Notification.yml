@@ -1,0 +1,30 @@
+type: object
+properties:
+  id:
+    type: integer
+    example: 1
+  read:
+    type: boolean
+    example: true
+  kind:
+    type: string
+    enum:
+      - application
+      - approval
+      - approvalPending
+      - rejected
+      - unapplied
+    example: "application"
+  employee:
+    type: object
+    $ref: "./Employee.yml"
+  shift:
+    type: object
+    $ref: "./Shift.yml"
+  absence:
+    type: object
+    $ref: "./Absence.yml"
+required:
+  - "id"
+  - "read"
+  - "kind"

@@ -33,6 +33,8 @@ paths:
     $ref: "./paths/v1/admin/shifts/shiftById.yml"
   /api/v1/admin/absences/{id}:
     $ref: "./paths/v1/admin/absences/absenceById.yml"
+  /api/v1/admin/notifications:
+    $ref: "./paths/v1/admin/notifications.yml"
 # これからの参考にとりあえず残しておく
 # /users:
 #   get:
