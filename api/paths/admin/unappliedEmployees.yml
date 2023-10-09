@@ -1,7 +1,7 @@
 get:
-  summary: "シフトカレンダー関連の取得"
+  summary: "シフト未申請従業員の取得"
   tags: ["admin"]
-  operationId: getShifts
+  operationId: getUnappliedEmployees
   deprecated: false
   responses:
     "200":
@@ -14,7 +14,7 @@ get:
               data:
                 type: array
                 items:
-                  $ref: "../../components/schemas/Shift.yml"
+                  $ref: "../../components/schemas/Employee.yml"
     "401":
       $ref: "../../components/responses/Unauthorized.yml"
     "403":

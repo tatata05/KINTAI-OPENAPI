@@ -35,6 +35,8 @@ paths:
     $ref: "./paths/admin/absenceById.yml"
   /api/v1/admin/notifications:
     $ref: "./paths/admin/notifications.yml"
+  /api/v1/admin/unappliedEmployees:
+    $ref: "./paths/admin/unappliedEmployees.yml"
 # これからの参考にとりあえず残しておく
 # /users:
 #   get:
