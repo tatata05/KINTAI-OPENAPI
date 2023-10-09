@@ -19,6 +19,8 @@ get:
               data:
                 type: object
                 $ref: "../../components/schemas/Notification.yml"
+              pagenation:
+                $ref: "../../components/schemas/Pagination.yml"
     "401":
       $ref: "../../components/responses/Unauthorized.yml"
     "403":
