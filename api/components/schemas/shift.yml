@@ -14,7 +14,7 @@ properties:
     enum:
       - unapproved
       - approved
-      - rejected
+      - absenceApplication
     example: "unapproved"
   employee:
     type: object
