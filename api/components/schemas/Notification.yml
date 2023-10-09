@@ -20,10 +20,10 @@ properties:
     $ref: "./EmployeeOnlyName.yml"
   shift:
     type: object
-    $ref: "./Shift.yml"
+    $ref: "./ShiftForNotification.yml"
   absence:
     type: object
-    $ref: "./Absence.yml"
+    $ref: "./AbsenceForNotification.yml"
 required:
   - "id"
   - "read"
