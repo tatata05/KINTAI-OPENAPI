@@ -15,6 +15,8 @@ get:
                 type: array
                 items:
                   $ref: "../../components/schemas/Shift.yml"
+              pagenation:
+                $ref: "../../components/schemas/Pagination.yml"
     "401":
       $ref: "../../components/responses/Unauthorized.yml"
     "403":
