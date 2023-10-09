@@ -18,7 +18,7 @@ properties:
     example: "unapproved"
   employee:
     type: object
-    $ref: "./Employee.yml"
+    $ref: "./EmployeeOnlyName.yml"
 required:
   - "id"
   - "startTime"

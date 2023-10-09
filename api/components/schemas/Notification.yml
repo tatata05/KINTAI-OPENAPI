@@ -17,7 +17,7 @@ properties:
     example: "application"
   employee:
     type: object
-    $ref: "./Employee.yml"
+    $ref: "./EmployeeOnlyName.yml"
   shift:
     type: object
     $ref: "./Shift.yml"

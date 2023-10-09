@@ -19,7 +19,7 @@ get:
             properties:
               data:
                 type: object
-                $ref: "../../components/schemas/Employee.yml"
+                $ref: "../../components/schemas/EmployeeAllInfo.yml"
     "401":
       $ref: "../../components/responses/Unauthorized.yml"
     "403":
