@@ -17,7 +17,7 @@ tags:
     description: "従業員の操作"
 
 paths:
-  /api/v1/admin/current_admin:
+  /api/v1/admin/current-admin:
     $ref: "./paths/admin/currentAdmin.yml"
   /api/v1/admin/admins:
     $ref: "./paths/admin/admins.yml"
@@ -35,5 +35,5 @@ paths:
     $ref: "./paths/admin/absenceById.yml"
   /api/v1/admin/notifications:
     $ref: "./paths/admin/notifications.yml"
-  /api/v1/admin/unappliedEmployees:
+  /api/v1/admin/unapplied-employees:
     $ref: "./paths/admin/unappliedEmployees.yml"
