@@ -9,6 +9,15 @@ properties:
   kind:
     type: string
     enum:
+      - shift
+      - absence
+    example: shift
+  itemId:
+    type: integer
+    example: 10
+  status:
+    type: string
+    enum:
       - application
       - approval
       - approvalPending
@@ -18,13 +27,15 @@ properties:
   employee:
     type: object
     $ref: "./EmployeeOnlyName.yml"
-  shift:
-    type: object
-    $ref: "./ShiftForNotification.yml"
-  absence:
-    type: object
-    $ref: "./AbsenceForNotification.yml"
+  startTime:
+    type: string
+    example: "2030/01/01 18:00"
+  endTime:
+    type: string
+    example: "2030/01/01 23:00"
 required:
   - "id"
   - "read"
   - "kind"
+  - "itemId"
+  - "status"
