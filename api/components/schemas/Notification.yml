@@ -1,0 +1,41 @@
+type: object
+properties:
+  id:
+    type: integer
+    example: 1
+  read:
+    type: boolean
+    example: true
+  kind:
+    type: string
+    enum:
+      - shift
+      - absence
+    example: shift
+  itemId:
+    type: integer
+    example: 10
+  status:
+    type: string
+    enum:
+      - application
+      - approval
+      - approvalPending
+      - rejected
+      - unapplied
+    example: "application"
+  employee:
+    type: object
+    $ref: "./EmployeeOnlyName.yml"
+  startTime:
+    type: string
+    example: "2030/01/01 18:00"
+  endTime:
+    type: string
+    example: "2030/01/01 23:00"
+required:
+  - "id"
+  - "read"
+  - "kind"
+  - "itemId"
+  - "status"

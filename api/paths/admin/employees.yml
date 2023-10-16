@@ -1,0 +1,48 @@
+get:
+  summary: "全ての従業員の取得"
+  tags: ["admin"]
+  operationId: getEmployees
+  deprecated: false
+  responses:
+    "200":
+      description: "Success"
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "../../components/schemas/Employee.yml"
+              pagenation:
+                $ref: "../../components/schemas/Pagination.yml"
+    "401":
+      $ref: "../../components/responses/Unauthorized.yml"
+    "403":
+      $ref: "../../components/responses/Forbidden.yml"
+    "500":
+      $ref: "../../components/responses/InternalServerError.yml"
+post:
+  summary: "従業員作成"
+  tags: ["admin"]
+  operationId: createEmployee
+  deprecated: false
+  requestBody:
+    description: "従業員登録情報"
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../components/requestBodies/CreateEmployee.yml"
+  responses:
+    "201":
+      description: "Success"
+    "400":
+      $ref: "../../components/responses/BadRequest.yml"
+    "401":
+      $ref: "../../components/responses/Unauthorized.yml"
+    "403":
+      $ref: "../../components/responses/Forbidden.yml"
+    "500":
+      $ref: "../../components/responses/InternalServerError.yml"

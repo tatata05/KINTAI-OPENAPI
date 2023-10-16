@@ -1,0 +1,14 @@
+description: "InternalServerError"
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          example: "InternalServerError"
+        messages:
+          type: array
+          items:
+            type: string
+            example: "サーバーエラー"

@@ -1,27 +1,37 @@
-version: "3"
-
+version: '3.8'
 services:
-  swagger-editor:
-    image: swaggerapi/swagger-editor
-    container_name: "swagger-editor"
+  redoc:
+    image: redocly/redoc
     ports:
-      - "8001:8080"
-
+      - 8001:80
+    volumes:
+      - ./api/merged.yaml:/usr/share/nginx/html/merged.yaml
+    environment:
+      SPEC_URL: merged.yaml
   swagger-ui:
     image: swaggerapi/swagger-ui
-    container_name: "swagger-ui"
     ports:
-      - "8002:8080"
+      - 8002:8080
     volumes:
-      - ./api/openapi.yaml:/openapi.yaml
+      - ./api/merged.yaml:/usr/share/nginx/html/merged.yaml
     environment:
-      SWAGGER_JSON: /openapi.yaml
-
-  swagger-api:
-    image: stoplight/prism:3
-    container_name: "swagger-api"
+      API_URL: merged.yaml
+  api-mock:
+    image: danielgtaylor/apisprout
     ports:
-      - "8003:4010"
-    command: mock -h 0.0.0.0 /openapi.yaml
+      - 8003:8000
     volumes:
-      - ./api/openapi.yaml:/openapi.yaml
+      - ./api/merged.yaml:/merged.yaml
+    entrypoint: /usr/local/bin/apisprout /merged.yaml --watch
+  redoc-cli:
+    build: ./docker/redoc-cli
+    volumes:
+      - ./api:/data
+  swagger-merger:
+    build: ./docker/swagger-merger
+    volumes:
+      - ./docker/swagger-merger/watch.js:/watch.js
+      - ./api:/data
+    environment:
+      NODE_PATH: /usr/local/lib/node_modules
+    entrypoint: node /watch

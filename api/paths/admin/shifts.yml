@@ -1,0 +1,23 @@
+get:
+  summary: "シフトカレンダー関連の取得"
+  tags: ["admin"]
+  operationId: getShifts
+  deprecated: false
+  responses:
+    "200":
+      description: "Success"
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "../../components/schemas/Shift.yml"
+    "401":
+      $ref: "../../components/responses/Unauthorized.yml"
+    "403":
+      $ref: "../../components/responses/Forbidden.yml"
+    "500":
+      $ref: "../../components/responses/InternalServerError.yml"
