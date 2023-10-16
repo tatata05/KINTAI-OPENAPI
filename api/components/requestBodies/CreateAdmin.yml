@@ -1,3 +1,5 @@
+# TODO: deviseのgemに合わせる
+
 type: object
 properties:
   name:
@@ -9,6 +11,6 @@ properties:
   password:
     type: string
     example: "password"
-  password_confirmation:
+  passwordConfirmation:
     type: string
     example: "password"

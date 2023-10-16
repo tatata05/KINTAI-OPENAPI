@@ -1,0 +1,15 @@
+type: object
+properties:
+  id:
+    type: integer
+    example: 1
+  name:
+    type: string
+    example: "example 従業員"
+  email:
+    type: string
+    example: "kintai_employee@example.com"
+required:
+  - "id"
+  - "name"
+  - "email"

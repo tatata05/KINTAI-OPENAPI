@@ -1,0 +1,19 @@
+type: object
+properties:
+  id:
+    type: integer
+    example: 1
+  status:
+    type: string
+    enum:
+      - unapproved
+      - approved
+      - rejected
+    example: "unapproved"
+  shift:
+    type: object
+    $ref: "./Shift.yml"
+required:
+  - "id"
+  - "status"
+  - "shift"

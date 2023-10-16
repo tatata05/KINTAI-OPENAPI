@@ -1,0 +1,19 @@
+# TODO: deviseのgemに合わせる
+
+type: object
+properties:
+  name:
+    type: string
+    example: "admin管理者"
+  email:
+    type: string
+    example: "admin@example.com"
+  password:
+    type: string
+    example: "new password"
+  passwordConfirmation:
+    type: string
+    example: "new password"
+  currentPassword:
+    type: string
+    example: "current password"

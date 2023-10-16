@@ -1,0 +1,11 @@
+type: object
+properties:
+  id:
+    type: integer
+    example: 1
+  name:
+    type: string
+    example: "example 従業員"
+required:
+  - "id"
+  - "name"

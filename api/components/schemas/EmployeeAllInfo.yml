@@ -1,0 +1,30 @@
+type: object
+properties:
+  id:
+    type: integer
+    example: 1
+  name:
+    type: string
+    example: "example 従業員"
+  email:
+    type: string
+    example: "kintai_employee@example.com"
+  gender:
+    type: string
+    example: "男性"
+  age:
+    type: integer
+    example: 25
+  address:
+    type: string
+    example: "東京都千代田区丸の内1-1-1"
+  phoneNumber:
+    type: string
+    example: "080-0000-0000"
+  emergencyPhoneNumber:
+    type: string
+    example: "090-0000-0000"
+required:
+  - "id"
+  - "name"
+  - "email"
