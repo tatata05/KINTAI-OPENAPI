@@ -35,7 +35,7 @@ patch:
         schema:
           $ref: "../../components/requestBodies/UpdateEmployee.yml"
   responses:
-    "201":
+    "204":
       description: "Success"
     "400":
       $ref: "../../components/responses/BadRequest.yml"
