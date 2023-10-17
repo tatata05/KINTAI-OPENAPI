@@ -1,0 +1,27 @@
+type: object
+properties:
+  id:
+    type: integer
+    example: 1
+  startTime:
+    type: string
+    example: "2030/01/01 18:00"
+  endTime:
+    type: string
+    example: "2030/01/01 23:00"
+  status:
+    type: string
+    enum:
+      - unapproved
+      - approved
+      - absenceApplication
+    example: "unapproved"
+  employee:
+    type: object
+    $ref: "../EmployeeOnlyName.yml"
+required:
+  - "id"
+  - "startTime"
+  - "endTime"
+  - "status"
+  - "employee"

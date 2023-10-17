@@ -1,7 +1,7 @@
 get:
   summary: "欠勤詳細の取得"
   tags: ["admin"]
-  operationId: getAbsence
+  operationId: getAbsenceForAdmin
   deprecated: false
   parameters:
     - name: id

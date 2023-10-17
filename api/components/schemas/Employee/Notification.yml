@@ -24,9 +24,6 @@ properties:
       - rejected
       - unapplied
     example: "application"
-  employee:
-    type: object
-    $ref: "./EmployeeOnlyName.yml"
   startTime:
     type: string
     example: "2030/01/01 18:00"

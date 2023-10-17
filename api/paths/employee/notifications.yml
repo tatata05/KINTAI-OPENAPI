@@ -1,7 +1,7 @@
 get:
   summary: "全ての通知の取得"
-  tags: ["admin"]
-  operationId: getNotificationsForAdmin
+  tags: ["employee"]
+  operationId: getNotificationsForEmployee
   deprecated: false
   parameters:
     - name: read
@@ -18,7 +18,7 @@ get:
             properties:
               data:
                 type: object
-                $ref: "../../components/schemas/Admin/Notification.yml"
+                $ref: "../../components/schemas/Employee/Notification.yml"
               pagenation:
                 $ref: "../../components/schemas/Pagination.yml"
     "401":

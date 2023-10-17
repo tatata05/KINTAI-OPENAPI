@@ -16,12 +16,8 @@ properties:
       - approved
       - absenceApplication
     example: "unapproved"
-  employee:
-    type: object
-    $ref: "./EmployeeOnlyName.yml"
 required:
   - "id"
   - "startTime"
   - "endTime"
   - "status"
-  - "employee"

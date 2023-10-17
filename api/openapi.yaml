@@ -37,3 +37,17 @@ paths:
     $ref: "./paths/admin/notifications.yml"
   /api/v1/admin/unapplied-employees:
     $ref: "./paths/admin/unappliedEmployees.yml"
+  /api/v1/employee/current-employee:
+    $ref: "./paths/employee/currentEmployee.yml"
+  /api/v1/employee/shifts:
+    $ref: "./paths/employee/shifts.yml"
+  /api/v1/employee/shifts/{id}:
+    $ref: "./paths/employee/shiftById.yml"
+  /api/v1/employee/absences:
+    $ref: "./paths/employee/absences.yml"
+  /api/v1/employee/absences/{id}:
+    $ref: "./paths/employee/absenceById.yml"
+  /api/v1/employee/notifications:
+    $ref: "./paths/employee/notifications.yml"
+  /api/v1/employee/mypage:
+    $ref: "./paths/employee/mypage.yml"
