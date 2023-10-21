@@ -1,7 +1,7 @@
 get:
   summary: "シフト詳細の取得"
   tags: ["admin"]
-  operationId: getShift
+  operationId: getShiftForAdmin
   deprecated: false
   parameters:
     - name: id
@@ -19,7 +19,7 @@ get:
             properties:
               data:
                 type: object
-                $ref: "../../components/schemas/Shift.yml"
+                $ref: "../../components/schemas/Admin/Shift.yml"
     "401":
       $ref: "../../components/responses/Unauthorized.yml"
     "403":

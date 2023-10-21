@@ -25,7 +25,10 @@ properties:
     example: "090-0000-0000"
   password:
     type: string
-    example: "password"
+    example: "new password"
   passwordConfirmation:
     type: string
-    example: "password"
+    example: "new password"
+  currentPassword:
+    type: string
+    example: "current password"

@@ -1,14 +1,8 @@
 get:
-  summary: "管理者詳細の取得"
-  tags: ["admin"]
-  operationId: getAdmin
+  summary: "シフトカレンダー関連の取得"
+  tags: ["employee"]
+  operationId: getShiftsForEmployee
   deprecated: false
-  parameters:
-    - name: id
-      in: path
-      required: true
-      schema:
-        type: string
   responses:
     "200":
       description: "Success"
@@ -18,30 +12,29 @@ get:
             type: object
             properties:
               data:
-                type: object
-                $ref: "../../components/schemas/Admin.yml"
+                type: array
+                items:
+                  $ref: "../../components/schemas/Employee/Shift.yml"
     "401":
       $ref: "../../components/responses/Unauthorized.yml"
     "403":
       $ref: "../../components/responses/Forbidden.yml"
-    "404":
-      $ref: "../../components/responses/NotFound.yml"
     "500":
       $ref: "../../components/responses/InternalServerError.yml"
-patch:
-  summary: "管理者編集"
-  tags: ["admin"]
-  operationId: updateAdmin
+post:
+  summary: "シフト申請の作成"
+  tags: ["employee"]
+  operationId: createShift
   deprecated: false
   requestBody:
-    description: "管理者編集情報"
+    description: "シフト申請情報"
     required: true
     content:
       application/json:
         schema:
-          $ref: "../../components/requestBodies/UpdateAdmin.yml"
+          $ref: "../../components/requestBodies/CreateShift.yml"
   responses:
-    "204":
+    "201":
       description: "Success"
     "400":
       $ref: "../../components/responses/BadRequest.yml"
@@ -49,7 +42,5 @@ patch:
       $ref: "../../components/responses/Unauthorized.yml"
     "403":
       $ref: "../../components/responses/Forbidden.yml"
-    "404":
-      $ref: "../../components/responses/NotFound.yml"
     "500":
       $ref: "../../components/responses/InternalServerError.yml"

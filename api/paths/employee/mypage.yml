@@ -1,14 +1,8 @@
 get:
-  summary: "管理者詳細の取得"
-  tags: ["admin"]
-  operationId: getAdmin
+  summary: "マイページ情報の取得"
+  tags: ["employee"]
+  operationId: getMypage
   deprecated: false
-  parameters:
-    - name: id
-      in: path
-      required: true
-      schema:
-        type: string
   responses:
     "200":
       description: "Success"
@@ -19,7 +13,7 @@ get:
             properties:
               data:
                 type: object
-                $ref: "../../components/schemas/Admin.yml"
+                $ref: "../../components/schemas/EmployeeAllInfo.yml"
     "401":
       $ref: "../../components/responses/Unauthorized.yml"
     "403":
@@ -29,17 +23,17 @@ get:
     "500":
       $ref: "../../components/responses/InternalServerError.yml"
 patch:
-  summary: "管理者編集"
-  tags: ["admin"]
-  operationId: updateAdmin
+  summary: "従業員の編集"
+  tags: ["employee"]
+  operationId: updateMypage
   deprecated: false
   requestBody:
-    description: "管理者編集情報"
+    description: "従業員編集情報"
     required: true
     content:
       application/json:
         schema:
-          $ref: "../../components/requestBodies/UpdateAdmin.yml"
+          $ref: "../../components/requestBodies/UpdateEmployee.yml"
   responses:
     "204":
       description: "Success"

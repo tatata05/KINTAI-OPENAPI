@@ -1,7 +1,7 @@
 get:
-  summary: "管理者詳細の取得"
-  tags: ["admin"]
-  operationId: getAdmin
+  summary: "シフト詳細の取得"
+  tags: ["employee"]
+  operationId: getShiftForEmployee
   deprecated: false
   parameters:
     - name: id
@@ -19,7 +19,7 @@ get:
             properties:
               data:
                 type: object
-                $ref: "../../components/schemas/Admin.yml"
+                $ref: "../../components/schemas/Employee/Shift.yml"
     "401":
       $ref: "../../components/responses/Unauthorized.yml"
     "403":
@@ -29,17 +29,17 @@ get:
     "500":
       $ref: "../../components/responses/InternalServerError.yml"
 patch:
-  summary: "管理者編集"
-  tags: ["admin"]
-  operationId: updateAdmin
+  summary: "シフト申請の編集"
+  tags: ["employee"]
+  operationId: updateShift
   deprecated: false
   requestBody:
-    description: "管理者編集情報"
+    description: "シフト編集情報"
     required: true
     content:
       application/json:
         schema:
-          $ref: "../../components/requestBodies/UpdateAdmin.yml"
+          $ref: "../../components/requestBodies/UpdateShift.yml"
   responses:
     "204":
       description: "Success"

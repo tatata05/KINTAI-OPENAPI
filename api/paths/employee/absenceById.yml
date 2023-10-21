@@ -1,13 +1,14 @@
 get:
-  summary: "全ての通知の取得"
-  tags: ["admin"]
-  operationId: getNotificationsForAdmin
+  summary: "欠勤詳細の取得"
+  tags: ["employee"]
+  operationId: getAbsenceForEmployee
   deprecated: false
   parameters:
-    - name: read
-      in: query
+    - name: id
+      in: path
+      required: true
       schema:
-        type: boolean
+        type: string
   responses:
     "200":
       description: "Success"
@@ -18,12 +19,12 @@ get:
             properties:
               data:
                 type: object
-                $ref: "../../components/schemas/Admin/Notification.yml"
-              pagenation:
-                $ref: "../../components/schemas/Pagination.yml"
+                $ref: "../../components/schemas/Absence.yml"
     "401":
       $ref: "../../components/responses/Unauthorized.yml"
     "403":
       $ref: "../../components/responses/Forbidden.yml"
+    "404":
+      $ref: "../../components/responses/NotFound.yml"
     "500":
       $ref: "../../components/responses/InternalServerError.yml"
