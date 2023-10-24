@@ -53,3 +53,25 @@ patch:
       $ref: "../../components/responses/NotFound.yml"
     "500":
       $ref: "../../components/responses/InternalServerError.yml"
+delete:
+  summary: "シフト申請の削除"
+  tags: ["employee"]
+  operationId: deleteShift
+  deprecated: false
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+  responses:
+    "204":
+      description: "Success"
+    "401":
+      $ref: "../../components/responses/Unauthorized.yml"
+    "403":
+      $ref: "../../components/responses/Forbidden.yml"
+    "404":
+      $ref: "../../components/responses/NotFound.yml"
+    "500":
+      $ref: "../../components/responses/InternalServerError.yml"
