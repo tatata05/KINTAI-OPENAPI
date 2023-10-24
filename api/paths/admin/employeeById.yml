@@ -8,7 +8,7 @@ get:
       in: path
       required: true
       schema:
-        type: string
+        type: integer
   responses:
     "200":
       description: "Success"
@@ -20,6 +20,28 @@ get:
               data:
                 type: object
                 $ref: "../../components/schemas/EmployeeAllInfo.yml"
+    "401":
+      $ref: "../../components/responses/Unauthorized.yml"
+    "403":
+      $ref: "../../components/responses/Forbidden.yml"
+    "404":
+      $ref: "../../components/responses/NotFound.yml"
+    "500":
+      $ref: "../../components/responses/InternalServerError.yml"
+delete:
+  summary: "従業員削除"
+  tags: ["admin"]
+  operationId: deleteEmployee
+  deprecated: false
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+  responses:
+    "204":
+      description: "Success"
     "401":
       $ref: "../../components/responses/Unauthorized.yml"
     "403":
