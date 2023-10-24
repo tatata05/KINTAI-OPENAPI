@@ -8,7 +8,7 @@ get:
       in: path
       required: true
       schema:
-        type: string
+        type: integer
   responses:
     "200":
       description: "Success"
@@ -33,6 +33,12 @@ patch:
   tags: ["admin"]
   operationId: updateAdmin
   deprecated: false
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
   requestBody:
     description: "管理者編集情報"
     required: true
@@ -45,6 +51,28 @@ patch:
       description: "Success"
     "400":
       $ref: "../../components/responses/BadRequest.yml"
+    "401":
+      $ref: "../../components/responses/Unauthorized.yml"
+    "403":
+      $ref: "../../components/responses/Forbidden.yml"
+    "404":
+      $ref: "../../components/responses/NotFound.yml"
+    "500":
+      $ref: "../../components/responses/InternalServerError.yml"
+delete:
+  summary: "管理者削除"
+  tags: ["admin"]
+  operationId: deleteAdmin
+  deprecated: false
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+  responses:
+    "204":
+      description: "Success"
     "401":
       $ref: "../../components/responses/Unauthorized.yml"
     "403":
