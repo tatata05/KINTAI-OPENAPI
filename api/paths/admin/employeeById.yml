@@ -9,6 +9,9 @@ get:
       required: true
       schema:
         type: integer
+  security:
+    - accessToken: []
+    - client: []
   responses:
     "200":
       description: "Success"
@@ -39,6 +42,9 @@ delete:
       required: true
       schema:
         type: integer
+  security:
+    - accessToken: []
+    - client: []
   responses:
     "204":
       description: "Success"

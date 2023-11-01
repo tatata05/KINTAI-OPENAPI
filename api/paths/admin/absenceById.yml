@@ -9,6 +9,9 @@ get:
       required: true
       schema:
         type: string
+  security:
+    - accessToken: []
+    - client: []
   responses:
     "200":
       description: "Success"
@@ -39,6 +42,9 @@ patch:
       required: true
       schema:
         type: integer
+  security:
+    - accessToken: []
+    - client: []
   requestBody:
     description: "ステータス情報"
     required: true

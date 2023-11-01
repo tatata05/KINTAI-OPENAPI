@@ -51,3 +51,13 @@ paths:
     $ref: "./paths/employee/notifications.yml"
   /api/v1/employee/mypage:
     $ref: "./paths/employee/mypage.yml"
+components:
+  securitySchemes:
+    accessToken:
+      type: apiKey
+      in: header
+      name: accessToken
+    client:
+      type: apiKey
+      in: header
+      name: client

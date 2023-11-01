@@ -10,6 +10,9 @@ post:
       application/json:
         schema:
           $ref: "../../components/requestBodies/CreateAbsence.yml"
+  security:
+    - accessToken: []
+    - client: []
   responses:
     "201":
       description: "Success"

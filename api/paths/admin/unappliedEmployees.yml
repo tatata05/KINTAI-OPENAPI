@@ -3,6 +3,9 @@ get:
   tags: ["admin"]
   operationId: getUnappliedEmployees
   deprecated: false
+  security:
+    - accessToken: []
+    - client: []
   responses:
     "200":
       description: "Success"

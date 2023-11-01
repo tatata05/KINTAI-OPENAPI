@@ -3,6 +3,9 @@ get:
   tags: ["employee"]
   operationId: getShiftsForEmployee
   deprecated: false
+  security:
+    - accessToken: []
+    - client: []
   responses:
     "200":
       description: "Success"
@@ -33,6 +36,9 @@ post:
       application/json:
         schema:
           $ref: "../../components/requestBodies/CreateShift.yml"
+  security:
+    - accessToken: []
+    - client: []
   responses:
     "201":
       description: "Success"

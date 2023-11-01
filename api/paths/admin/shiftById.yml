@@ -9,6 +9,9 @@ get:
       required: true
       schema:
         type: string
+  security:
+    - accessToken: []
+    - client: []
   responses:
     "200":
       description: "Success"
@@ -46,6 +49,9 @@ patch:
       application/json:
         schema:
           $ref: "../../components/requestBodies/UpdateShiftStatus.yml"
+  security:
+    - accessToken: []
+    - client: []
   responses:
     "204":
       description: "Success"

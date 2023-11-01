@@ -8,6 +8,9 @@ get:
       in: query
       schema:
         type: boolean
+  security:
+    - accessToken: []
+    - client: []
   responses:
     "200":
       description: "Success"

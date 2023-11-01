@@ -3,6 +3,9 @@ get:
   tags: ["employee"]
   operationId: getMypage
   deprecated: false
+  security:
+    - accessToken: []
+    - client: []
   responses:
     "200":
       description: "Success"
@@ -34,6 +37,9 @@ patch:
       application/json:
         schema:
           $ref: "../../components/requestBodies/UpdateEmployee.yml"
+  security:
+    - accessToken: []
+    - client: []
   responses:
     "204":
       description: "Success"
