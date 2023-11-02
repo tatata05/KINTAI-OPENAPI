@@ -1,0 +1,69 @@
+post:
+  summary: "管理者作成"
+  tags: ["auth"]
+  operationId: createAdmin
+  deprecated: false
+  requestBody:
+    description: "管理者登録情報"
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../components/requestBodies/CreateAdmin.yml"
+  security:
+    - accessToken: []
+    - client: []
+  responses:
+    "201":
+      description: "Success"
+    "400":
+      $ref: "../../components/responses/BadRequest.yml"
+    "401":
+      $ref: "../../components/responses/Unauthorized.yml"
+    "403":
+      $ref: "../../components/responses/Forbidden.yml"
+    "500":
+      $ref: "../../components/responses/InternalServerError.yml"
+put:
+  summary: "管理者編集"
+  tags: ["auth"]
+  operationId: updateAdmin
+  deprecated: false
+  security:
+    - accessToken: []
+    - client: []
+  requestBody:
+    description: "管理者編集情報"
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../components/requestBodies/UpdateAdmin.yml"
+  responses:
+    "204":
+      description: "Success"
+    "400":
+      $ref: "../../components/responses/BadRequest.yml"
+    "401":
+      $ref: "../../components/responses/Unauthorized.yml"
+    "403":
+      $ref: "../../components/responses/Forbidden.yml"
+    "500":
+      $ref: "../../components/responses/InternalServerError.yml"
+delete:
+  summary: "管理者削除"
+  tags: ["auth"]
+  operationId: deleteAdmin
+  deprecated: false
+  security:
+    - accessToken: []
+    - client: []
+  responses:
+    "204":
+      description: "Success"
+    "401":
+      $ref: "../../components/responses/Unauthorized.yml"
+    "403":
+      $ref: "../../components/responses/Forbidden.yml"
+    "500":
+      $ref: "../../components/responses/InternalServerError.yml"

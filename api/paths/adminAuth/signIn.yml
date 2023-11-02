@@ -1,0 +1,19 @@
+post:
+  summary: "管理者ログイン"
+  tags: ["auth"]
+  operationId: signInAdmin
+  deprecated: false
+  requestBody:
+    description: "管理者ログイン情報"
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../components/requestBodies/SignIn.yml"
+  responses:
+    "201":
+      description: "Success"
+    "400":
+      $ref: "../../components/responses/BadRequest.yml"
+    "500":
+      $ref: "../../components/responses/InternalServerError.yml"
