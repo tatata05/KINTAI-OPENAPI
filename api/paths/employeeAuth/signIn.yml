@@ -13,6 +13,14 @@ post:
   responses:
     "201":
       description: "Success"
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                $ref: "../../components/schemas/SignIn.yml"
     "400":
       $ref: "../../components/responses/BadRequest.yml"
     "500":
