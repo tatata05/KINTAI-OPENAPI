@@ -3,9 +3,7 @@ delete:
   tags: ["auth"]
   operationId: signOutEmployee
   deprecated: false
-  security:
-    - accessToken: []
-    - client: []
+  $ref: "../../components/security/auth.yml"
   responses:
     "204":
       description: "Success"
