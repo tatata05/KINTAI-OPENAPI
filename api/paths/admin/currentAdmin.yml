@@ -4,6 +4,7 @@ get:
   operationId: getCurrentAdmin
   deprecated: false
   security:
+    - uid: []
     - accessToken: []
     - client: []
   responses:

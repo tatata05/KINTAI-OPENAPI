@@ -10,6 +10,7 @@ get:
       schema:
         type: integer
   security:
+    - uid: []
     - accessToken: []
     - client: []
   responses:

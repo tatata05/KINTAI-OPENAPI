@@ -10,6 +10,7 @@ get:
       schema:
         type: string
   security:
+    - uid: []
     - accessToken: []
     - client: []
   responses:
@@ -50,6 +51,7 @@ patch:
         schema:
           $ref: "../../components/requestBodies/UpdateShiftStatus.yml"
   security:
+    - uid: []
     - accessToken: []
     - client: []
   responses:

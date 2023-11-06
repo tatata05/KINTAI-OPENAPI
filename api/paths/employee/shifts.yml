@@ -4,6 +4,7 @@ get:
   operationId: getShiftsForEmployee
   deprecated: false
   security:
+    - uid: []
     - accessToken: []
     - client: []
   responses:
@@ -37,6 +38,7 @@ post:
         schema:
           $ref: "../../components/requestBodies/CreateShift.yml"
   security:
+    - uid: []
     - accessToken: []
     - client: []
   responses:

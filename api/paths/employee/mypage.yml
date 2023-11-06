@@ -4,6 +4,7 @@ get:
   operationId: getMypage
   deprecated: false
   security:
+    - uid: []
     - accessToken: []
     - client: []
   responses:

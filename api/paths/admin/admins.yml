@@ -4,6 +4,7 @@ get:
   operationId: getAdmins
   deprecated: false
   security:
+    - uid: []
     - accessToken: []
     - client: []
   responses:

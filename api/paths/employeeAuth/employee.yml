@@ -11,6 +11,7 @@ post:
         schema:
           $ref: "../../components/requestBodies/CreateEmployee.yml"
   security:
+    - uid: []
     - accessToken: []
     - client: []
   responses:
@@ -37,6 +38,7 @@ put:
         schema:
           $ref: "../../components/requestBodies/UpdateEmployee.yml"
   security:
+    - uid: []
     - accessToken: []
     - client: []
   responses:
@@ -56,6 +58,7 @@ delete:
   operationId: deleteEmployee
   deprecated: false
   security:
+    - uid: []
     - accessToken: []
     - client: []
   responses:

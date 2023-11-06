@@ -4,6 +4,7 @@ delete:
   operationId: signOutAdmin
   deprecated: false
   security:
+    - uid: []
     - accessToken: []
     - client: []
   responses:

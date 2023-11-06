@@ -11,6 +11,7 @@ post:
         schema:
           $ref: "../../components/requestBodies/CreateAdmin.yml"
   security:
+    - uid: []
     - accessToken: []
     - client: []
   responses:
@@ -30,6 +31,7 @@ put:
   operationId: updateAdmin
   deprecated: false
   security:
+    - uid: []
     - accessToken: []
     - client: []
   requestBody:
@@ -56,6 +58,7 @@ delete:
   operationId: deleteAdmin
   deprecated: false
   security:
+    - uid: []
     - accessToken: []
     - client: []
   responses:

@@ -9,6 +9,7 @@ get:
       schema:
         type: boolean
   security:
+    - uid: []
     - accessToken: []
     - client: []
   responses:

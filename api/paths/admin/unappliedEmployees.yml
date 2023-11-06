@@ -4,6 +4,7 @@ get:
   operationId: getUnappliedEmployees
   deprecated: false
   security:
+    - uid: []
     - accessToken: []
     - client: []
   responses:

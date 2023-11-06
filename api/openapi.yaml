@@ -67,6 +67,10 @@ paths:
     $ref: "./paths/employeeAuth/signOut.yml"
 components:
   securitySchemes:
+    uid:
+      type: apiKey
+      in: header
+      name: uid
     accessToken:
       type: apiKey
       in: header

@@ -11,6 +11,7 @@ post:
         schema:
           $ref: "../../components/requestBodies/CreateAbsence.yml"
   security:
+    - uid: []
     - accessToken: []
     - client: []
   responses:
