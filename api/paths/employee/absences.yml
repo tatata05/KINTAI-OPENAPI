@@ -10,10 +10,7 @@ post:
       application/json:
         schema:
           $ref: "../../components/requestBodies/CreateAbsence.yml"
-  security:
-    - uid: []
-    - accessToken: []
-    - client: []
+  $ref: "../../components/security/auth.yml"
   responses:
     "201":
       description: "Success"

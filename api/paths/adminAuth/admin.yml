@@ -10,10 +10,7 @@ post:
       application/json:
         schema:
           $ref: "../../components/requestBodies/CreateAdmin.yml"
-  security:
-    - uid: []
-    - accessToken: []
-    - client: []
+  $ref: "../../components/security/auth.yml"
   responses:
     "201":
       description: "Success"
@@ -30,10 +27,7 @@ put:
   tags: ["auth"]
   operationId: updateAdmin
   deprecated: false
-  security:
-    - uid: []
-    - accessToken: []
-    - client: []
+  $ref: "../../components/security/auth.yml"
   requestBody:
     description: "管理者編集情報"
     required: true
@@ -57,10 +51,7 @@ delete:
   tags: ["auth"]
   operationId: deleteAdmin
   deprecated: false
-  security:
-    - uid: []
-    - accessToken: []
-    - client: []
+  $ref: "../../components/security/auth.yml"
   responses:
     "204":
       description: "Success"

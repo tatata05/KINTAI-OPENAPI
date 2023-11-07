@@ -9,10 +9,7 @@ get:
       required: true
       schema:
         type: string
-  security:
-    - uid: []
-    - accessToken: []
-    - client: []
+  $ref: "../../components/security/auth.yml"
   responses:
     "200":
       description: "Success"
@@ -50,10 +47,7 @@ patch:
       application/json:
         schema:
           $ref: "../../components/requestBodies/UpdateShiftStatus.yml"
-  security:
-    - uid: []
-    - accessToken: []
-    - client: []
+  $ref: "../../components/security/auth.yml"
   responses:
     "204":
       description: "Success"

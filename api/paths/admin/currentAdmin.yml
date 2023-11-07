@@ -3,10 +3,7 @@ get:
   tags: ["admin"]
   operationId: getCurrentAdmin
   deprecated: false
-  security:
-    - uid: []
-    - accessToken: []
-    - client: []
+  $ref: "../../components/security/auth.yml"
   responses:
     "200":
       description: "Success"

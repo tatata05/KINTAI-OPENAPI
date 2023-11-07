@@ -9,10 +9,7 @@ get:
       required: true
       schema:
         type: string
-  security:
-    - uid: []
-    - accessToken: []
-    - client: []
+  $ref: "../../components/security/auth.yml"
   responses:
     "200":
       description: "Success"
@@ -44,10 +41,7 @@ patch:
       application/json:
         schema:
           $ref: "../../components/requestBodies/UpdateShift.yml"
-  security:
-    - uid: []
-    - accessToken: []
-    - client: []
+  $ref: "../../components/security/auth.yml"
   responses:
     "204":
       description: "Success"
@@ -72,10 +66,7 @@ delete:
       required: true
       schema:
         type: integer
-  security:
-    - uid: []
-    - accessToken: []
-    - client: []
+  $ref: "../../components/security/auth.yml"
   responses:
     "204":
       description: "Success"

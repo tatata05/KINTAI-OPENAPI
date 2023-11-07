@@ -8,10 +8,7 @@ get:
       in: query
       schema:
         type: boolean
-  security:
-    - uid: []
-    - accessToken: []
-    - client: []
+  $ref: "../../components/security/auth.yml"
   responses:
     "200":
       description: "Success"
