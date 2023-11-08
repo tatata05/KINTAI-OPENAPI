@@ -3,6 +3,7 @@ get:
   tags: ["employee"]
   operationId: getMypage
   deprecated: false
+  $ref: "../../components/security/auth.yml"
   responses:
     "200":
       description: "Success"
@@ -14,31 +15,6 @@ get:
               data:
                 type: object
                 $ref: "../../components/schemas/EmployeeAllInfo.yml"
-    "401":
-      $ref: "../../components/responses/Unauthorized.yml"
-    "403":
-      $ref: "../../components/responses/Forbidden.yml"
-    "404":
-      $ref: "../../components/responses/NotFound.yml"
-    "500":
-      $ref: "../../components/responses/InternalServerError.yml"
-patch:
-  summary: "従業員の編集"
-  tags: ["employee"]
-  operationId: updateMypage
-  deprecated: false
-  requestBody:
-    description: "従業員編集情報"
-    required: true
-    content:
-      application/json:
-        schema:
-          $ref: "../../components/requestBodies/UpdateEmployee.yml"
-  responses:
-    "204":
-      description: "Success"
-    "400":
-      $ref: "../../components/responses/BadRequest.yml"
     "401":
       $ref: "../../components/responses/Unauthorized.yml"
     "403":

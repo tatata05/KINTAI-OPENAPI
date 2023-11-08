@@ -1,0 +1,15 @@
+type: object
+properties:
+  uid:
+    type: string
+    example: "kintai@example.com"
+  accessToken:
+    type: string
+    example: "wSvoPf8sj1JYUgKxUUIPEA"
+  client:
+    type: string
+    example: "APdMEmm8QBZdnDQVinItiQ"
+required:
+  - "uid"
+  - "accessToken"
+  - "client"

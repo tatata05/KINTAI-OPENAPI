@@ -1,0 +1,15 @@
+delete:
+  summary: "管理者ログアウト"
+  tags: ["auth"]
+  operationId: signOutAdmin
+  deprecated: false
+  $ref: "../../components/security/auth.yml"
+  responses:
+    "204":
+      description: "Success"
+    "401":
+      $ref: "../../components/responses/Unauthorized.yml"
+    "403":
+      $ref: "../../components/responses/Forbidden.yml"
+    "500":
+      $ref: "../../components/responses/InternalServerError.yml"

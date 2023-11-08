@@ -3,6 +3,7 @@ get:
   tags: ["admin"]
   operationId: getUnappliedEmployees
   deprecated: false
+  $ref: "../../components/security/auth.yml"
   responses:
     "200":
       description: "Success"

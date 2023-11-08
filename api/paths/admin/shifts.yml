@@ -3,6 +3,7 @@ get:
   tags: ["admin"]
   operationId: getShiftsForAdmin
   deprecated: false
+  $ref: "../../components/security/auth.yml"
   responses:
     "200":
       description: "Success"

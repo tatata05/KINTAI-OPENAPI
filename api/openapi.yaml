@@ -15,6 +15,8 @@ tags:
     description: "管理者の操作"
   - name: "employee"
     description: "従業員の操作"
+  - name: "auth"
+    description: "devise関連の操作"
 
 paths:
   /api/v1/admin/current-admin:
@@ -51,3 +53,29 @@ paths:
     $ref: "./paths/employee/notifications.yml"
   /api/v1/employee/mypage:
     $ref: "./paths/employee/mypage.yml"
+  /api/v1/admin_auth:
+    $ref: "./paths/adminAuth/admin.yml"
+  /api/v1/admin_auth/sign_in:
+    $ref: "./paths/adminAuth/signIn.yml"
+  /api/v1/admin_auth/sign_out:
+    $ref: "./paths/adminAuth/signOut.yml"
+  /api/v1/employee_auth:
+    $ref: "./paths/employeeAuth/employee.yml"
+  /api/v1/employee_auth/sign_in:
+    $ref: "./paths/employeeAuth/signIn.yml"
+  /api/v1/employee_auth/sign_out:
+    $ref: "./paths/employeeAuth/signOut.yml"
+components:
+  securitySchemes:
+    uid:
+      type: apiKey
+      in: header
+      name: uid
+    accessToken:
+      type: apiKey
+      in: header
+      name: accessToken
+    client:
+      type: apiKey
+      in: header
+      name: client

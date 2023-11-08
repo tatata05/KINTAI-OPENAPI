@@ -9,6 +9,7 @@ get:
       required: true
       schema:
         type: string
+  $ref: "../../components/security/auth.yml"
   responses:
     "200":
       description: "Success"
@@ -39,6 +40,7 @@ delete:
       required: true
       schema:
         type: integer
+  $ref: "../../components/security/auth.yml"
   responses:
     "204":
       description: "Success"

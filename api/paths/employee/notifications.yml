@@ -8,6 +8,7 @@ get:
       in: query
       schema:
         type: boolean
+  $ref: "../../components/security/auth.yml"
   responses:
     "200":
       description: "Success"

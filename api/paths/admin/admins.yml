@@ -3,6 +3,7 @@ get:
   tags: ["admin"]
   operationId: getAdmins
   deprecated: false
+  $ref: "../../components/security/auth.yml"
   responses:
     "200":
       description: "Success"
@@ -17,29 +18,6 @@ get:
                   $ref: "../../components/schemas/Admin.yml"
               pagenation:
                 $ref: "../../components/schemas/Pagination.yml"
-    "401":
-      $ref: "../../components/responses/Unauthorized.yml"
-    "403":
-      $ref: "../../components/responses/Forbidden.yml"
-    "500":
-      $ref: "../../components/responses/InternalServerError.yml"
-post:
-  summary: "管理者作成"
-  tags: ["admin"]
-  operationId: createAdmin
-  deprecated: false
-  requestBody:
-    description: "管理者登録情報"
-    required: true
-    content:
-      application/json:
-        schema:
-          $ref: "../../components/requestBodies/CreateAdmin.yml"
-  responses:
-    "201":
-      description: "Success"
-    "400":
-      $ref: "../../components/responses/BadRequest.yml"
     "401":
       $ref: "../../components/responses/Unauthorized.yml"
     "403":

@@ -1,5 +1,3 @@
-# TODO: deviseのgemに合わせる
-
 type: object
 properties:
   name:

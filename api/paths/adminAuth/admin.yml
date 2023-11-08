@@ -1,47 +1,40 @@
-get:
-  summary: "シフト詳細の取得"
-  tags: ["employee"]
-  operationId: getShiftForEmployee
-  deprecated: false
-  parameters:
-    - name: id
-      in: path
-      required: true
-      schema:
-        type: string
-  $ref: "../../components/security/auth.yml"
-  responses:
-    "200":
-      description: "Success"
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              data:
-                type: object
-                $ref: "../../components/schemas/Employee/Shift.yml"
-    "401":
-      $ref: "../../components/responses/Unauthorized.yml"
-    "403":
-      $ref: "../../components/responses/Forbidden.yml"
-    "404":
-      $ref: "../../components/responses/NotFound.yml"
-    "500":
-      $ref: "../../components/responses/InternalServerError.yml"
-patch:
-  summary: "シフト申請の編集"
-  tags: ["employee"]
-  operationId: updateShift
+post:
+  summary: "管理者作成"
+  tags: ["auth"]
+  operationId: createAdmin
   deprecated: false
   requestBody:
-    description: "シフト編集情報"
+    description: "管理者登録情報"
     required: true
     content:
       application/json:
         schema:
-          $ref: "../../components/requestBodies/UpdateShift.yml"
+          $ref: "../../components/requestBodies/CreateAdmin.yml"
   $ref: "../../components/security/auth.yml"
+  responses:
+    "201":
+      description: "Success"
+    "400":
+      $ref: "../../components/responses/BadRequest.yml"
+    "401":
+      $ref: "../../components/responses/Unauthorized.yml"
+    "403":
+      $ref: "../../components/responses/Forbidden.yml"
+    "500":
+      $ref: "../../components/responses/InternalServerError.yml"
+put:
+  summary: "管理者編集"
+  tags: ["auth"]
+  operationId: updateAdmin
+  deprecated: false
+  $ref: "../../components/security/auth.yml"
+  requestBody:
+    description: "管理者編集情報"
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../../components/requestBodies/UpdateAdmin.yml"
   responses:
     "204":
       description: "Success"
@@ -51,21 +44,13 @@ patch:
       $ref: "../../components/responses/Unauthorized.yml"
     "403":
       $ref: "../../components/responses/Forbidden.yml"
-    "404":
-      $ref: "../../components/responses/NotFound.yml"
     "500":
       $ref: "../../components/responses/InternalServerError.yml"
 delete:
-  summary: "シフト申請の削除"
-  tags: ["employee"]
-  operationId: deleteShift
+  summary: "管理者削除"
+  tags: ["auth"]
+  operationId: deleteAdmin
   deprecated: false
-  parameters:
-    - name: id
-      in: path
-      required: true
-      schema:
-        type: integer
   $ref: "../../components/security/auth.yml"
   responses:
     "204":
@@ -74,7 +59,5 @@ delete:
       $ref: "../../components/responses/Unauthorized.yml"
     "403":
       $ref: "../../components/responses/Forbidden.yml"
-    "404":
-      $ref: "../../components/responses/NotFound.yml"
     "500":
       $ref: "../../components/responses/InternalServerError.yml"
