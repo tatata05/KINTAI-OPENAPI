@@ -9,18 +9,7 @@ properties:
   endTime:
     type: string
     example: "2030/01/01 23:00"
-  status:
-    type: string
-    enum:
-      - unapproved
-      - approved
-      - absenceApplication
-    example: "unapproved"
-  absenceId:
-    type: integer
-    example: 1
 required:
   - "id"
   - "startTime"
   - "endTime"
-  - "status"

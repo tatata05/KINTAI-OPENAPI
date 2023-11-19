@@ -10,4 +10,4 @@ content:
         message:
           type: array
           items:
-            example: "〇〇を入力してください"
+            example: "不正な入力値です。"

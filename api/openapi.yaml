@@ -19,16 +19,18 @@ tags:
     description: "devise関連の操作"
 
 paths:
-  /api/v1/admin/current-admin:
-    $ref: "./paths/admin/currentAdmin.yml"
   /api/v1/admin/admins:
     $ref: "./paths/admin/admins.yml"
   /api/v1/admin/admins/{id}:
     $ref: "./paths/admin/adminById.yml"
+  /api/v1/admin/admins/profile:
+    $ref: "./paths/admin/currentAdmin.yml"
   /api/v1/admin/employees:
     $ref: "./paths/admin/employees.yml"
   /api/v1/admin/employees/{id}:
     $ref: "./paths/admin/employeeById.yml"
+  /api/v1/admin/employees/unapplied_employees:
+    $ref: "./paths/admin/unappliedEmployees.yml"
   /api/v1/admin/shifts:
     $ref: "./paths/admin/shifts.yml"
   /api/v1/admin/shifts/{id}:
@@ -37,22 +39,26 @@ paths:
     $ref: "./paths/admin/absenceById.yml"
   /api/v1/admin/notifications:
     $ref: "./paths/admin/notifications.yml"
-  /api/v1/admin/unapplied-employees:
-    $ref: "./paths/admin/unappliedEmployees.yml"
-  /api/v1/employee/current-employee:
-    $ref: "./paths/employee/currentEmployee.yml"
+  /api/v1/admin/notifications/{id}:
+    $ref: "./paths/admin/notificationById.yml"
   /api/v1/employee/shifts:
     $ref: "./paths/employee/shifts.yml"
   /api/v1/employee/shifts/{id}:
     $ref: "./paths/employee/shiftById.yml"
   /api/v1/employee/absences:
     $ref: "./paths/employee/absences.yml"
+  /api/v1/employee/absences/new:
+    $ref: "./paths/employee/absenceNew.yml"
   /api/v1/employee/absences/{id}:
     $ref: "./paths/employee/absenceById.yml"
   /api/v1/employee/notifications:
     $ref: "./paths/employee/notifications.yml"
+  /api/v1/employee/notifications/{id}:
+    $ref: "./paths/employee/notificationById.yml"
   /api/v1/employee/mypage:
     $ref: "./paths/employee/mypage.yml"
+  /api/v1/employee/mypage/profile:
+    $ref: "./paths/employee/currentEmployee.yml"
   /api/v1/admin_auth:
     $ref: "./paths/adminAuth/admin.yml"
   /api/v1/admin_auth/sign_in:
