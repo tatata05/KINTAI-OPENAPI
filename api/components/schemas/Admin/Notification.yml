@@ -27,15 +27,10 @@ properties:
   employee:
     type: object
     $ref: "../EmployeeOnlyName.yml"
-  startTime:
+  shiftTime:
     type: string
-    example: "2030/01/01 18:00"
-  endTime:
-    type: string
-    example: "2030/01/01 23:00"
+    example: "2030/01/01 18:00-23:00"
 required:
   - "id"
   - "read"
-  - "kind"
-  - "itemId"
   - "status"
