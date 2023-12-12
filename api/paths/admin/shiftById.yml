@@ -8,7 +8,7 @@ get:
       in: path
       required: true
       schema:
-        type: string
+        type: integer
   $ref: "../../components/security/auth.yml"
   responses:
     "200":
