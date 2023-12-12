@@ -8,7 +8,7 @@ get:
       in: path
       required: true
       schema:
-        type: string
+        type: integer
   $ref: "../../components/security/auth.yml"
   responses:
     "200":
@@ -34,6 +34,12 @@ patch:
   tags: ["employee"]
   operationId: updateShift
   deprecated: false
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
   requestBody:
     description: "シフト編集情報"
     required: true
